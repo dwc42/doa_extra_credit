@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import recursiveMax from './recursive_max';
+const defaultInput: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 export default function Program() {
 	const [getOutput, setOutput] = useState(<div></div>);
 	const [getError, setError] = useState("");
-	const [getInput, setInput] = useState([3, 5, 2, 9, 1, 8, 0, 2]);
+	const [getInput, setInput] = useState(defaultInput);
 	function calculate(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
 		const inputArray = getInput;
 		const max = recursiveMax(inputArray);
@@ -42,12 +43,14 @@ export default function Program() {
 	}
 	return (
 		<div>
-			<h1>Program</h1>
-			<p>This is the program component.</p>
+			<h1 className="Title">Program</h1>
+			<p className="Paragraph">This is the program component.</p>
 			<p style={{ color: "red" }}>{getError}</p>
-			<input id="enter a number array" onInput={input} />
+			<input id="enter a number array" value={JSON.stringify(defaultInput)} onInput={input} />
 			<button id="calculate" onClick={calculate}>Submit</button>
-			{getOutput}
+			<div className="Output">
+				{getOutput}
+			</div>
 
 		</div>
 	);
