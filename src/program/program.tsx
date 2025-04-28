@@ -4,14 +4,15 @@ const defaultInput: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 export default function Program() {
 	const [getOutput, setOutput] = useState(<div></div>);
 	const [getError, setError] = useState("");
-	const [getInput, setInput] = useState(defaultInput);
+	const [getInput, setInput] = useState(JSON.stringify(defaultInput));
+	const [getArray, setArray] = useState(defaultInput);
 	function calculate(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-		const inputArray = getInput;
-		const max = recursiveMax(inputArray);
+		const inputArray = getArray;
+		const max = recursiveMax(getArray);
 		let text = "";
-		text += `recursiveMax(${JSON.stringify(getInput)})<br />`;
+		text += `recursiveMax(${JSON.stringify(getArray)})<br />`;
 		for (let i = 1; i < inputArray.length; i++) {
-			text += `${"&nbsp;&nbsp;&nbsp;".repeat(i)}-  recursiveMax(${JSON.stringify(getInput.slice(0, inputArray.length - i))})}<br />`;
+			text += `${"&nbsp;&nbsp;&nbsp;".repeat(i)}-  recursiveMax(${JSON.stringify(getArray.slice(0, inputArray.length - i))})}<br />`;
 		}
 		let currentMax = inputArray[0];
 		for (let i = 0; i < inputArray.length; i++) {
@@ -26,6 +27,7 @@ export default function Program() {
 	}
 	function input(event: React.FormEvent<HTMLInputElement>) {
 		const { value } = event.target as HTMLInputElement;
+		setInput(value);
 		let inputArray;
 		try {
 			inputArray = JSON.parse(value);
@@ -34,7 +36,7 @@ export default function Program() {
 		}
 
 		if (Array.isArray(inputArray)) {
-			setInput(inputArray);
+			setArray(inputArray);
 			setError("");
 		} else {
 			return setError("Please enter a valid array.");
@@ -46,12 +48,11 @@ export default function Program() {
 			<h1 className="Title">Program</h1>
 			<p className="Paragraph">This is the program component.</p>
 			<p style={{ color: "red" }}>{getError}</p>
-			<input id="enter a number array" value={JSON.stringify(defaultInput)} onInput={input} />
+			<input id="enter a number array" value={getInput} onInput={input} />
 			<button id="calculate" onClick={calculate}>Submit</button>
 			<div className="Output">
 				{getOutput}
 			</div>
-
 		</div>
 	);
 }
