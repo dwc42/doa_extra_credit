@@ -1,3 +1,7 @@
+# Design of Algorithims Extra Credit
+Dow Cox\
+Tyler Chan\
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
