@@ -46,7 +46,7 @@ export default function Program() {
 	return (
 		<div>
 			<h1 className="Title">Program</h1>
-			<p className="Paragraph">This is the program component.</p>
+			<p className="Paragraph">This program demonstrates the how to recursively find the maximum element in an array of size n.</p>
 			<p style={{ color: "red" }}>{getError}</p>
 			<input id="enter a number array" value={getInput} onInput={input} />
 			<button id="calculate" onClick={calculate}>Submit</button>

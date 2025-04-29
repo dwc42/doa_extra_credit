@@ -15,6 +15,16 @@
   font-size: 50;
   border-radius: 25%;
   text-align: center;
+  
 
 }
 
+.Paragraph {
+  color: greenyellow;
+  text-align: center;
+}
+
+
+.Output {
+  color: white;
+}
