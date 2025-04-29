@@ -1,7 +1,8 @@
 # Design of Algorithims Extra Credit
 Dow Cox\
 Tyler Chan\
-Agorithim in `./src/program.tsx`.\
+Algorithm in `./src/recursive_max.ts`\
+Display System in `./src/program.tsx`.\
 [https://dwc42.github.io/doa_extra_credit/](https://dwc42.github.io/doa_extra_credit/)
 
 # Getting Started with Create React App
