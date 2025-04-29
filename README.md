@@ -1,4 +1,4 @@
-# Design of Algorithims Extra Credit
+# Design of Algorithms Extra Credit
 Dow Cox\
 Tyler Chan\
 Algorithm in `./src/recursive_max.ts`\
