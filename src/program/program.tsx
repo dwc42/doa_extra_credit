@@ -12,7 +12,7 @@ export default function Program() {
 		let text = "";
 		text += `recursiveMax(${JSON.stringify(getArray)})<br />`;
 		for (let i = 1; i < inputArray.length; i++) {
-			text += `${"&nbsp;&nbsp;&nbsp;".repeat(i)}-  recursiveMax(${JSON.stringify(getArray.slice(0, inputArray.length - i))})}<br />`;
+			text += `${"&nbsp;&nbsp;&nbsp;".repeat(i)}-  recursiveMax(${JSON.stringify(getArray.slice(0, inputArray.length - i))})<br />`;
 		}
 		let currentMax = inputArray[0];
 		for (let i = 0; i < inputArray.length; i++) {
